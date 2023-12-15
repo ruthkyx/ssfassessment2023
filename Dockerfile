@@ -12,6 +12,7 @@ COPY mvnw.cmd .
 COPY pom.xml .
 COPY .mvn .mvn
 COPY src src
+COPY events.json .
 
 # Build the application
 RUN mvn package -Dmaven.test.skip=true
@@ -24,4 +25,4 @@ ENV PORT=8080
 EXPOSE ${PORT}
 
 # Run the program
-ENTRYPOINT SERVER_PORT=${PORT} java -jar target/vttp2023-batch4-ssf-assessment-0.0.1-SNAPSHOT.jar
+ENTRYPOINT SERVER_PORT=${PORT} java -jar target/vttp2023-batch4-ssf-assessment.0.1-SNAPSHOT.jar

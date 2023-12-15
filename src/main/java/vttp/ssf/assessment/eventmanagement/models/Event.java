@@ -1,7 +1,14 @@
 package vttp.ssf.assessment.eventmanagement.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Event {
-    
+
     // unique identifier for an event
     private Integer eventId;
 

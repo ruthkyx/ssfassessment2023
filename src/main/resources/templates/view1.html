@@ -11,10 +11,12 @@
 <body>
     <div class="container">
         <h1>Register Event</h1>
-        <p>You have chosen to register for the following event:</p>
-        <h4>
-            <!-- event name + date -->
-        </h4>
+        <p>
+            <div>You have chosen to register for the following event:</div>
+            <div data-th-text="${eventName}"></div>
+            <div data-th-text="${event}"></div>
+        </p>
+
         <form data-th-action="@{/register}" method="POST" data-th-object="${Register}">
 
             <div class="mb-3">

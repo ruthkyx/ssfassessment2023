@@ -12,14 +12,14 @@
 <body>
     <div class="container">
         <h1>Success</h1>
-        <br>
+        <hr>
         <div class="mb-3">
             <p>You have successfully registered for the event:
-                <span></span>
-                <span></span>
+                <span data-th-text="${eventName}"></span>
+                <span data-th-text="${eventDate}"></span>
             </p>
             <div>
-                <h4> <a data-th-href="@{/}">Back</a> </h4>
+                <h6> <a href="view0.html">Back</a> </h6>
             </div>
         </div>
     </div>

@@ -17,13 +17,16 @@ public class EventmanagementApplication implements CommandLineRunner{
 
 	@Autowired
 	private DatabaseService databaseSvc;
+
+	String fileDir = "/Users/ruthie/Desktop/codes/vttp2023-batch4-ssf-assessment";
+
 	public static void main(String[] args) {
 		SpringApplication.run(EventmanagementApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		List<Event> events = databaseSvc.readFile(null);
+		List<Event> events = databaseSvc.readFile(fileDir);
 		System.out.printf("events: %s\n", events);
 	}
 

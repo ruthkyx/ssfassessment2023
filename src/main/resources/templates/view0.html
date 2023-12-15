@@ -8,8 +8,9 @@
     <title>List of Events</title>
 </head>
 <body>
+    <div class="container">
     <h1>List of Events: </h1>
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th scope="col">Event ID</th>
@@ -20,18 +21,19 @@
             </tr>
         </thead>
         <tbody>
-            <tr data-th-each="ev : ${events}">
-                <td></td>
-                <td data-th-text="*{eventId}"></td>
-                <td data-th-text="*{eventName}"></td>
-                <td data-th-text="*{eventSize}"></td>
-                <td data-th-text="*{eventDate}"></td>
-                <td>
-                    <form action="@{/register}" method="GET"></form>
-                    <button type="submit">Register</button>
-                </td>
-            </tr>
+            <form data-th-action="${/event}" data-th-object="${Event}" method="GET">
+                <tr data-th-each="ev : ${events}">
+                    <td data-th-text="*{eventId}"></td>
+                    <td data-th-text="*{eventName}"></td>
+                    <td data-th-text="*{eventSize}"></td>
+                    <td data-th-text="*{eventDate}"></td>
+                    <td>
+                        <a data-th-href="@{/register/{event}(event=$(ev.eventName))}" class="btn btn-primary">Register</a>
+                    </td>
+                </tr>
+            </form>
         </tbody>
     </table>
+    </div>
 </body>
 </html>

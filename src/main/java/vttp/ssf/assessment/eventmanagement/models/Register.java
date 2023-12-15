@@ -1,5 +1,9 @@
 package vttp.ssf.assessment.eventmanagement.models;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.validation.constraints.Email;
@@ -34,6 +38,6 @@ public class Register {
 
     private String gender;
 
-    @Size(min=1, max=3)
+    @Size(min=1, max=3, message="min qty is 1 and max qty is 3")
     private String qty; // number of tickets requested
 }

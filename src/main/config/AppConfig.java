@@ -23,7 +23,7 @@ public class AppConfig {
     private Integer redisDatabase;
 
 
-    @Bean("myredis") //Utils.BEAN_REDDIS
+    @Bean("myredis") 
     public RedisTemplate <String, String> createRedisConnection() {
         // create a redis configuration 
         RedisStandaloneConfiguration config = new RedisStandaloneConfiguration();
